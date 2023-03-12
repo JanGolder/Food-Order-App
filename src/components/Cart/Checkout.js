@@ -3,7 +3,7 @@ import classes from './Checkout.module.css';
 
 
 const isEmpty = value => value.trim() ==='';
-const isFiveChars = value => value.trim().length === 5;
+const isFiveChars = value => value.trim().length > 5;
 
 const Checkout = (props) => {
 
@@ -74,7 +74,7 @@ const Checkout = (props) => {
       <div className={postalControlClasses}>
         <label htmlFor='postal'>Postal Code</label>
         <input ref={postalCodeInputRef} type='text' id='postal' />
-        {!formInputValidity.postalCode && <p>Please enter a correct postal code (5 characters long).</p>}
+        {!formInputValidity.postalCode && <p>Please enter a correct postal code (min. 5 characters long).</p>}
       </div>
       <div className={cityControlClasses}>
         <label htmlFor='city'>City</label>
